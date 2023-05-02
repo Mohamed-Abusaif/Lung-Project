@@ -18,8 +18,8 @@
         border: 5px solid #0275d8;
       }
       .centered {
-        position: fixed;
-        bottom: 0;
+        position: absolute;
+        margin-top: 20px;
         left: 50%;
         transform: translateX(-50%);
         text-align: center;
@@ -51,6 +51,11 @@
         max-width: 15%;
         height: auto;
       }
+
+      #objectImage {
+        max-width: 50%;
+        max-height: 50%;
+      }
     </style>
   </head>
   <body>
@@ -73,8 +78,8 @@
         such as physical activity and not smoking, can help prevent lung injury
         and disease.!
       </p>
+      <img id="objectImage" src="assets\3.jpg" alt="Lungs" />
       <div class="centered">
-        <img src="assets\3.jpg" alt="Lungs" />
         <a href="Model Page.html" target="_blank">
           <button type="button" class="btn btn-primary">
             Learn From Lung 3d Model!
