@@ -1,51 +1,111 @@
-<!doctype html>
-<html>
-    <head>
-        <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
-        <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
-        <script src="https://raw.githack.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
-        <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-detector.js"></script>
-        <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-handler.js"></script>
-    </head>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lungs!</title>
+    <!-- Add Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css"
+    />
+    <style>
+      body {
+      }
+      .container {
+        position: relative;
+        border: 5px solid #0275d8;
+      }
+      .centered {
+        position: fixed;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        justify-content: center;
+      }
+      .centered button {
+        margin-bottom: 10px;
+        border-color: #007bff;
+      }
+      .centered img {
+        margin: 20px 0;
+        max-width: 100%;
+        max-height: 300px;
+      }
 
-    <body style="margin: 0; overflow: hidden;">
-        <a-scene
-            vr-mode-ui="enabled: false;"
-            loading-screen="enabled: false;"
-            renderer="logarithmicDepthBuffer: true;"
-            arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;"
-            id="scene"
-            embedded
-            gesture-detector
-        >
-            <a-assets>
-                <a-asset-item
-                    id="animated-asset"
-                    src="assets/asset.gltf"
-                ></a-asset-item>
-            </a-assets>
+      .container.border {
+        border: 2px solid #007bff;
+        padding: 20px;
+        margin-bottom: 20px; /* Add margin to create space */
+        text-align: center;
+      }
+      #logo {
+        display: block;
+        margin: 10px auto;
+        max-width: 15%;
+        height: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <img id="logo" src="assets\Logo.jpg" alt="Logo" />
 
-            <a-marker
-                id="animated-marker"
-                type="pattern"
-                preset="custom"
-                url="assets/marker.patt"
-                raycaster="objects: .clickable"
-                emitevents="true"
-                cursor="fuse: false; rayOrigin: mouse;"
-                id="markerA"
-            >
-                <a-entity
-                    id="bowser-model"
-                    scale="1.293328353278676 1.293328353278676 1.293328353278676"
-                    animation-mixer="loop: repeat"
-                    gltf-model="#animated-asset"
-                    class="clickable"
-                    gesture-handler
-                ></a-entity>
-            </a-marker>
+    <div class="container border">
+      <h1>All You Need To Know About Lungs!</h1>
+      <p>
+        Your lungs are the pair of spongy, pinkish-gray organs in your chest.
+        When you inhale (breathe in), air enters your lungs, and oxygen from
+        that air moves to your blood. At the same time, carbon dioxide, a waste
+        gas, moves from your blood to the lungs and is exhaled (breathed out).
+        This process, called gas exchange, is essential to life. The lungs are
+        the centerpiece of your respiratory system. Your respiratory system also
+        includes the trachea (windpipe), muscles of the chest wall and
+        diaphragm, blood vessels, and other tissues. All of these parts make
+        breathing and gas exchange possible. Your brain controls your breathing
+        rate (how fast or slow you breathe), by sensing your body’s need to get
+        oxygen and also get rid of carbon dioxide. Healthy lifestyle habits,
+        such as physical activity and not smoking, can help prevent lung injury
+        and disease.
+      </p>
+      <div class="centered">
+        <img src="assets\3.jpg" alt="Lungs" />
+        <a href="index.html" target="_blank">
+          <button type="button" class="btn btn-primary">
+            Learn From Lung 3d Model!
+          </button>
+        </a>
 
-            <a-entity camera></a-entity>
-        </a-scene>
-    </body>
+        <audio id="audioPlayer">
+          <source src="assets\New_Recording.m4a" type="audio/mpeg" />
+          Your browser does not support the audio element.
+        </audio>
+
+        <button type="button" class="btn btn-primary" onclick="playAudio()">
+          Play Audio For Illustration!
+        </button>
+
+        <a href="https://en.wikipedia.org/wiki/Lung" target="_blank">
+          <button type="button" class="btn btn-primary">
+            Additional Resources
+          </button>
+        </a>
+      </div>
+    </div>
+
+    <!-- Add Bootstrap JS -->
+    <script>
+      function playAudio() {
+        var audioPlayer = document.getElementById("audioPlayer");
+        audioPlayer.play();
+      }
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
+  </body>
 </html>
